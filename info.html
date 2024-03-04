@@ -1,0 +1,64 @@
+<head>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+
+
+
+<body id="info">
+    <h2>Kom i kontakt med oss</h2>
+    <p>På Café Oasen värderar vi våra kunders tankar och feedback. Om du har några frågor, förslag eller bara vill säga hej, tveka inte att nå ut till oss. Vi ser fram emot att höra från dig!</p>
+    
+    <h3>Kontaktuppgifter</h3>
+    <h4>Besöksadress</h4>
+    <p>
+        Café Oasen<br>
+        Storgatan 8<br>
+        223 45 Solhamn
+    </p>
+    
+    <h4>Telefon</h4>
+    <p>012-345 67 89</p>
+    
+    <h4>E-post</h4>
+    <p>kontakt@cafeoasen.se</p>
+    
+    <h4>Öppettider:</h4>
+    <p>
+        Måndag - Fredag: 07:30 - 18:00<br>
+        Lördag: 09:00 - 17:00<br>
+        Söndag: Stängt<br>
+    </p>
+    
+    <h4>Följ Oss på Sociala Medier:</h4>
+    <p>
+        Facebook: CafeOasenSolhamn<br>
+        Instagram: cafeoasen_solhamn<br>
+        Twitter: CafeOasen
+    </p>
+    
+    <!-- <a href="images/Cafe_Oasen_Coffee.png" target="_blank"><img src="images/Cafe_Oasen_Coffee.png" alt="En kopp färskbryggt kaffe med rik crema på toppen i det mysiga Café Oasen, med en varm och inbjudande interiör i bakgrunden." width="300em" height="300em"></a> -->
+    
+    <h2 id="reviews">Ge oss ditt omdöme!</h2>
+    <p>
+        Dina synpunkter är viktiga för oss för att skapa en trivsam miljö och göra vad vi kan för att alla våra kunder ska kunna ha det mysigt och gemytligt! Skriv gärna till oss om din upplevelse kring vad du gillade eller vad du saknade. <br><br> Tycker du att det fattas något i vår meny? Lämna gärna önskemål!
+    </p>
+    
+    <!-- <form>
+        <label for="name">Namn</label> <br>
+        <input type="text" id="name" name="name"> <br><br>
+        <label for="email">E-post</label> <br>
+        <input type="email" id="email" name="email"> <br><br>
+        <label for="message">Meddelande</label> <br>
+        <textarea id="message" name="message"></textarea> <br>
+        <button type="submit">Skicka!</button>
+    </form> -->
+    {% extends 'base.html' %}  {# Anpassa detta efter din aktuella basmall #}
+
+    {% block content %}
+    {# Annat innehåll på din hemsida #}
+
+    {% include 'userMsgTmpl.html' %}  {# Inkludera formuläret här #}
+    {% endblock %}
+
+</body>
