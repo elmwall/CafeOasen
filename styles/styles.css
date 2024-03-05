@@ -152,356 +152,6 @@ i {
 
 
 
-/* RESPONSIVE ADAPTATIONS */
-/* These settings will cause the layout and settings of specified elements to change depending on the width of the screen. */
-
-/* DESKTOP / Wide screens */
-@media only screen and (min-width: 950px) {
-    body{ font-size: 1em; } /* Set basic font size */
-
-    /* PAGE LAYOUT */
-    /* Sets the following layout:
-
-        1       2       3       4
-    1   header  header  header  header
-    2   aside   main    main    article
-    3   aside   main    main    article
-    4   aside   main    main    article
-    5   footer  footer  footer  footer  
-    
-    Columns 1 and 4, and row 1 has defined widths, while the other adjusts to the content.
-    */
-    .grid-container { 
-        grid-template-columns: 30em repeat(2, 2fr) 33em; 
-        grid-template-rows: 10em repeat(3, 1fr) auto; 
-    }
-
-    /* Settings for main grid items */
-    /* Overall or homepage settings are defined first. */
-    /* Adaptations for sub-pages are set for the #ID of the page. */
-    header { 
-        grid-column: 1 / span 4; 
-        min-width: 100vw; 
-    }
-    aside { 
-        grid-column: 1; 
-        grid-row: 2 / span 3; 
-        margin-top: 2em;
-    }
-    .main-content { 
-        grid-column: 2 / span 2; 
-        grid-row: 2 / span 3; 
-        min-width: 23em; 
-        justify-self: center; 
-        margin-top: 13em;
-    }
-    #menupage .main-content { 
-        grid-column: 2 / span 3; 
-        grid-row: 2 / span 3; 
-        width: 95%; 
-        justify-self: left; 
-        margin-top: 3em; 
-        margin-bottom: 1em; }
-    article { 
-        grid-column: 4; 
-        grid-row: 2 / span 3; 
-    }
-    #menupage article { display: none; }
-    footer { 
-        grid-column: 1 / span 4; 
-        grid-row: 5; 
-        width: 100vw;
-    }
-    
-    /* Settings for grid internal elements */
-    /* Header */
-    /* Set a nested grid for the header with lauout:
-    
-        1       2       3
-    1   title   badge   quote
-    2   nav
-
-    */
-    .header-container { 
-        display: grid; 
-        grid-template-columns: 1fr 20em 1fr; 
-        grid-template-rows: 8em auto; 
-        height: 8em; 
-    }
-    /* Decorative badge / compass */
-    .badge-holder { 
-        display: block; 
-        grid-column: 2; 
-        grid-row: 1 / span 1; scale: 1.5; 
-        justify-self: center; 
-    }
-    .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 5em; }
-    /* Hamburger menu is set to be hidden for desktop navigation */
-    .nav-phone-controller { display: none; }
-    
-    /* Main */
-    .main-content-group { margin-right: -9em; 
-        margin-left: -2em; 
-        max-width: 60em; 
-    }
-    /* For menu display, an internal grid is defined. */
-    /* Only the position for the heading is defined, I let the menu items be sorted automatically. */
-    /* This will set the following layout:
-    
-        1       2       3
-    1   heading heading heading
-    2   menu    menu    menu
-    3   menu    menu    menu
-
-    */
-    #menupage .main-content-group { max-width: 100%; }
-    .menu-container { display: grid; 
-        grid-template-columns: repeat(3, 1fr); 
-        grid-template-rows: repeat(2, auto); 
-        margin-left: 20%; max-width: 80em;
-    }
-    .main-content-head { 
-        grid-column: 1 / span 3; 
-        grid-row: 1; 
-    }
-
-    /* Aside */
-    .aside-group { width: 24em; }
-    
-    /* Footer */
-    /* An internal three-column grid is set for info-groups in the the footer. */
-    .footer-content { display: grid; grid-template-columns: repeat(3, auto); }
-    /* A grid is also used for setting information details nicely into two columns. */
-    .info-details { display: grid; grid-template-columns: auto auto; }
-    
-    /* Adaptations for specifik styles */
-    h1 { 
-        font-size: 8em; 
-        margin-right: 0.4em; 
-    }
-    h2 { 
-        font-size: 3.5em; 
-        text-align: right; 
-        margin-right: 1em; 
-        margin-left: -0.5em;
-    }
-}
-
-
-/* Adaptations for narrow desktop window */
-@media only screen and (min-width: 950px) and (max-width: 1500px) {
-    #menupage header { 
-        grid-column: 1 / span 4; 
-        min-width: 120vw; 
-    }
-
-    /* Change the menu layout:
-    
-        1       2       
-    1   heading heading 
-    2   menu    menu    
-    3   menu    menu    
-    4   menu    menu
-
-    */
-    #menupage .menu-container {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: auto repeat(3, auto); 
-        margin-left: 20%; 
-        max-width: 60em;
-    }
-    /* #menupage .main-content-head { 
-        grid-column: 1 / span 2; 
-        grid-row: 1; 
-    } */
-    #menupage .main-content-group { max-width: 80%; }
-}
-
-
-
-/* TABLET / Intermediate width screens */
-@media only screen and (max-width: 949px) {
-    body{ font-size: 0.8em; }
-
-    /* PAGE LAYOUT */
-    /* Sets the following layout:
-
-        1       2       3       
-    1   header  header  header  
-    2   aside   main    main      
-    3   footer  footer  footer    
-    
-    Rows 3 has defined widths, while the other adjusts to the content.
-    */
-    .grid-container { 
-        grid-template-columns: repeat(2, 1fr) auto; 
-        grid-template-rows: auto auto 5em; 
-    }
-
-    header { 
-        grid-column: 1 / span 3; 
-        min-width: 48em;
-    }
-    aside { 
-        grid-column: 3; 
-        grid-row: 2 / span 3; 
-        margin-top: 2em;
-    }
-    .main-content { 
-        grid-column: 1 /span 2; 
-        min-width: 0em; 
-        padding-left: 1.5em; 
-        margin: 1em; 
-        margin-top: 3em;
-    }
-    article { display: none; }
-    footer { grid-column: 1 /span 3; }
-    
-    .header-container { 
-        display: grid; 
-        grid-template-columns: 35em 1fr; 
-        grid-template-rows: 7em 0.9em auto; 
-        height: 9.1em; 
-    }
-    .badge-holder { 
-        display: block; 
-        grid-column: 2; 
-        grid-row: 1 / span 2; 
-        scale: 0.8; 
-        justify-self: right; 
-        padding-right: 10em; 
-    }
-    .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 2em; }
-    .nav-phone-controller { display: block; }
-
-    .main-content-group { 
-        margin-right: 0; 
-        margin-left: -2em; 
-    }
-
-    .aside-group { width: 19em; }
-
-    .footer-content { 
-        display: grid; 
-        grid-template-columns: repeat(3, auto); 
-    }
-    .info-details { grid-template-rows: repeat(3, 1em 1.5em); }
-
-    h1 { font-size: 8em; }
-    h2 { 
-        font-size: 3em; 
-        text-align: left; 
-        margin-left: 1.5em;
-    }
-    h3 { 
-        margin-right: 2em; 
-        margin-left: 2em; 
-    }
-}
-
-
-
-/* SMARTPHINE / Narrow screens */
-@media only screen and (max-width: 650px) {
-    body{ font-size: 0.8em; }
-
-    /* PAGE LAYOUT */
-    /* Sets the following layout:
-
-        1                     
-    1   header      
-    2   main
-    3   aside         
-    4   footer        
-    
-    Row 4 has defined width, while the other adjusts to the content.
-    */
-    .grid-container { 
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto repeat(2, 1fr) 24em; 
-    }
-
-    header { 
-        grid-column: 1; 
-        grid-row: 1; 
-        min-width: auto; 
-    }
-    .main-content { 
-        grid-column: 1; 
-        grid-row: 2; 
-        padding-left: 2em; 
-        margin: 0.5em; 
-        margin-top: 1em; 
-    }
-    aside { 
-        grid-column: 1; 
-        grid-row: 3; 
-        margin-top: -1em; 
-    }
-    article { display: none; }
-    footer { grid-column: 1; }
-    
-    .header-container { 
-        display: grid; 
-        grid-template-columns: 1fr auto auto; 
-        grid-template-rows: 6em 3em; 
-        height: auto; 
-    }
-    /* .header-container h1 { grid-column: 1; grid-row: 2 } */
-    .badge-holder { 
-        display: block; 
-        grid-column: 2; 
-        grid-row: 1 / span 2; 
-        scale: 0.8; 
-        justify-self: right; 
-        padding-right: 5em; 
-    }
-    .badge-controller { display: none; }
-    /* nav { display: none; } */
-    nav { 
-        display: block; 
-        grid-column: 1; 
-        grid-row: 2; 
-        margin-top: 0.5em; 
-        margin-left: 0.7em; 
-    }
-    .nav-phone-controller { display: block; }
-    .nav-phone { 
-        display: none; 
-        grid-column: 2; 
-        grid-row: 1 / span 2; 
-        justify-self: right; 
-        margin-right: 1em; 
-    }
-    
-    .aside-group { width: auto; }
-    .footer-content {
-        display: grid; 
-        grid-template-columns: 1fr; 
-        grid-template-rows: repeat(3, 7em); 
-        scale: 1
-    }
-    .info-details { 
-        grid-template-columns: auto auto; 
-        grid-template-rows: repeat(3, 1.3em);
-    }
-    
-    h1 { 
-        font-size: 8em; 
-        margin-top: 0.3em; 
-        margin-right: 0; 
-    }
-    h2 { display: none; }
-}
-
-@media only screen and (min-width: 2000px) { 
-    body { font-size: 1.2em;}
-}
-
-@media only screen and (min-width: 2500px) { 
-    body { font-size: 1.4em;}
-}
 
 /* LINKS */
 /* Links are animated to indicate that they can be interacted with and also to give a response upon interaction. */
@@ -620,8 +270,8 @@ a:active {
 .img-edges {
     position: absolute;     /* Make placement independent on other content */
     transform: translate(-50%, -50%) rotate(0deg);   /* Center the elements within the box instead of their upper left corner starting in the box center */
-    width: 10em;
-    height: 10em;
+    width: 10.1em;
+    height: 10.1em;
     border-radius: 50%;
     background-color: #00000000;
     box-shadow: inset 0 0 1em 0.2em #c3dfe2;
@@ -924,8 +574,10 @@ footer .style1-heading {
 }
 
 .main-content-group h2 {
+    font-size: 6em;
     text-align: right;
-    /* margin-right: 1em; */
+    min-width: auto;
+    margin-right: 0.2em;
 }
 
 .menu-container h3 {
@@ -944,4 +596,353 @@ footer .style1-heading {
 
 
 
+/* RESPONSIVE ADAPTATIONS */
+/* These settings will cause the layout and settings of specified elements to change depending on the width of the screen. */
 
+/* DESKTOP / Wide screens */
+@media only screen and (min-width: 950px) {
+    body{ font-size: 1em; } /* Set basic font size */
+
+    /* PAGE LAYOUT */
+    /* Sets the following layout:
+
+        1       2       3       4
+    1   header  header  header  header
+    2   aside   main    main    article
+    3   aside   main    main    article
+    4   aside   main    main    article
+    5   footer  footer  footer  footer  
+    
+    Columns 1 and 4, and row 1 has defined widths, while the other adjusts to the content.
+    */
+    .grid-container { 
+        grid-template-columns: 30em repeat(2, 2fr) 33em; 
+        grid-template-rows: 10em repeat(3, 1fr) auto; 
+    }
+
+    /* Settings for main grid items */
+    /* Overall or homepage settings are defined first. */
+    /* Adaptations for sub-pages are set for the #ID of the page. */
+    header { 
+        grid-column: 1 / span 4; 
+        min-width: 100vw; 
+    }
+    aside { 
+        grid-column: 1; 
+        grid-row: 2 / span 3; 
+        margin-top: 2em;
+    }
+    .main-content { 
+        grid-column: 2 / span 2; 
+        grid-row: 2 / span 3; 
+        min-width: 23em; 
+        justify-self: center; 
+        margin-top: 13em;
+    }
+    #menupage .main-content { 
+        grid-column: 2 / span 3; 
+        grid-row: 2 / span 3; 
+        width: 95%; 
+        justify-self: left; 
+        margin-top: 3em; 
+        margin-bottom: 1em; }
+    article { 
+        grid-column: 4; 
+        grid-row: 2 / span 3; 
+    }
+    #menupage article { display: none; }
+    footer { 
+        grid-column: 1 / span 4; 
+        grid-row: 5; 
+        width: 100vw;
+    }
+    
+    /* Settings for grid internal elements */
+    /* Header */
+    /* Set a nested grid for the header with lauout:
+    
+        1       2       3
+    1   title   badge   quote
+    2   nav
+
+    */
+    .header-container { 
+        display: grid; 
+        grid-template-columns: 1fr 20em 1fr; 
+        grid-template-rows: 8em auto; 
+        height: 8em; 
+    }
+    /* Decorative badge / compass */
+    .badge-holder { 
+        display: block; 
+        grid-column: 2; 
+        grid-row: 1 / span 1; scale: 1.5; 
+        justify-self: center; 
+    }
+    /* .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 5em; } */
+    /* Hamburger menu is set to be hidden for desktop navigation */
+    .nav-phone-controller { display: none; }
+    
+    /* Main */
+    .main-content-group { margin-right: -9em; 
+        margin-left: -2em; 
+        max-width: 60em; 
+    }
+    /* For menu display, an internal grid is defined. */
+    /* Only the position for the heading is defined, I let the menu items be sorted automatically. */
+    /* This will set the following layout:
+    
+        1       2       3
+    1   heading heading heading
+    2   menu    menu    menu
+    3   menu    menu    menu
+
+    */
+    #menupage .main-content-group { max-width: 100%; }
+    .menu-container { display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, auto); 
+        margin-left: 20%; max-width: 80em;
+    }
+    .main-content-head { 
+        grid-column: 1 / span 3; 
+        grid-row: 1; 
+    }
+
+    /* Aside */
+    .aside-group { width: 24em; }
+    
+    /* Footer */
+    /* An internal three-column grid is set for info-groups in the the footer. */
+    .footer-content { display: grid; grid-template-columns: repeat(3, auto); }
+    /* A grid is also used for setting information details nicely into two columns. */
+    .info-details { display: grid; grid-template-columns: auto auto; }
+    
+    /* Adaptations for specifik styles */
+    h1 { 
+        font-size: 8em; 
+        margin-right: 0.4em; 
+    }
+    h2 { 
+        font-size: 3.5em; 
+        text-align: right; 
+        /* margin-right: 1em;  */
+        /* margin-left: -0.5em; */
+    }
+}
+
+
+/* Adaptations for narrow desktop window */
+@media only screen and (min-width: 950px) and (max-width: 1500px) {
+    #menupage header { 
+        grid-column: 1 / span 4; 
+        min-width: 120vw; 
+    }
+
+    /* Change the menu layout:
+    
+        1       2       
+    1   heading heading 
+    2   menu    menu    
+    3   menu    menu    
+    4   menu    menu
+
+    */
+    #menupage .menu-container {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, auto); 
+        margin-left: 20%; 
+        max-width: 60em;
+    }
+    /* #menupage .main-content-head { 
+        grid-column: 1 / span 2; 
+        grid-row: 1; 
+    } */
+    #menupage .main-content-group { max-width: 80%; }
+}
+
+
+
+/* TABLET / Intermediate width screens */
+@media only screen and (max-width: 949px) {
+    body{ font-size: 0.8em; }
+
+    /* PAGE LAYOUT */
+    /* Sets the following layout:
+
+        1       2       3       
+    1   header  header  header  
+    2   aside   main    main      
+    3   footer  footer  footer    
+    
+    Rows 3 has defined widths, while the other adjusts to the content.
+    */
+    .grid-container { 
+        grid-template-columns: repeat(2, 1fr) auto; 
+        grid-template-rows: auto auto 5em; 
+    }
+
+    header { 
+        grid-column: 1 / span 3; 
+        min-width: 48em;
+    }
+    aside { 
+        grid-column: 3; 
+        grid-row: 2 / span 3; 
+        margin-top: 2em;
+    }
+    .main-content { 
+        grid-column: 1 /span 2; 
+        min-width: 0em; 
+        padding-left: 1.5em; 
+        margin: 1em; 
+        margin-top: 3em;
+    }
+    article { display: none; }
+    footer { grid-column: 1 /span 3; }
+    
+    .header-container { 
+        display: grid; 
+        grid-template-columns: 35em 1fr; 
+        grid-template-rows: 7em 0.9em auto; 
+        height: 9.1em; 
+    }
+    .badge-holder { 
+        display: block; 
+        grid-column: 2; 
+        grid-row: 1 / span 2; 
+        scale: 0.8; 
+        justify-self: right; 
+        padding-right: 10em; 
+    }
+    .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 2em; }
+    .nav-phone-controller { display: block; }
+
+    .main-content-group { 
+        margin-right: 0; 
+        margin-left: -2em; 
+    }
+
+    .aside-group { width: 19em; }
+
+    .footer-content { 
+        display: grid; 
+        grid-template-columns: repeat(3, auto); 
+    }
+    .info-details { grid-template-rows: repeat(3, 1em 1.5em); }
+
+    h1 { font-size: 8em; }
+    h2 { 
+        font-size: 3em; 
+        text-align: left; 
+        margin-left: 1.5em;
+    }
+    h3 { 
+        margin-right: 2em; 
+        margin-left: 2em; 
+    }
+}
+
+
+
+/* SMARTPHINE / Narrow screens */
+@media only screen and (max-width: 450px) {
+    body{ font-size: 0.7em; }
+
+    /* PAGE LAYOUT */
+    /* Sets the following layout:
+
+        1                     
+    1   header      
+    2   main
+    3   aside         
+    4   footer        
+    
+    Row 4 has defined width, while the other adjusts to the content.
+    */
+    .grid-container { 
+        grid-template-columns: auto; 
+        grid-template-rows: auto repeat(2, 1fr) 24em; 
+    }
+
+    header { 
+        /* grid-column: 1;  */
+        grid-row: 1; 
+        width: auto; 
+    }
+    .main-content { 
+        grid-column: 1; 
+        grid-row: 2; 
+        padding-left: 2em; 
+        margin: 0.5em; 
+        margin-top: 1em; 
+    }
+    aside { 
+        grid-column: 1; 
+        grid-row: 3; 
+        margin-top: -1em; 
+    }
+    article { display: none; }
+    footer { grid-column: 1; }
+    
+    .header-container { 
+        display: grid; 
+        grid-template-columns: 1fr auto auto; 
+        grid-template-rows: 6em 3em; 
+        height: auto; 
+    }
+    /* .header-container h1 { grid-column: 1; grid-row: 2 } */
+    .badge-holder { 
+        display: block; 
+        grid-column: 2; 
+        grid-row: 1 / span 2; 
+        scale: 0.8; 
+        justify-self: right; 
+        padding-right: 5em; 
+    }
+    .badge-controller { display: none; }
+    /* nav { display: none; } */
+    nav { 
+        display: block; 
+        grid-column: 1; 
+        grid-row: 2; 
+        margin-top: 0.5em; 
+        margin-left: 0.7em; 
+    }
+    .nav-phone-controller { display: block; }
+    .nav-phone { 
+        display: none; 
+        grid-column: 2; 
+        grid-row: 1 / span 2; 
+        justify-self: right; 
+        margin-right: 1em; 
+    }
+    
+    .aside-group { width: auto; }
+    .footer-content {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(3, 7em); 
+        scale: 1
+    }
+    .info-details { 
+        grid-template-columns: auto auto; 
+        grid-template-rows: repeat(3, 1.3em);
+    }
+    
+    h1 { 
+        font-size: 7em; 
+        margin-top: 0.3em; 
+        margin-right: 0; 
+    }
+    h2 { display: none; }
+}
+
+@media only screen and (min-width: 2000px) { 
+    body { font-size: 1.2em;}
+}
+
+@media only screen and (min-width: 2500px) { 
+    body { font-size: 1.4em;}
+}
