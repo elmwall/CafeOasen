@@ -23,21 +23,10 @@ body {
 }
 
 .background-coloring {
-    /* background-image: url("../images/Cafe_Oasen_Coffee.png"); */
-    /* background-color: rgba(255, 0, 0, 0.5); */
     background-color: #b6e4c0ce;
-    /* position: fixed; */
-    /* top: 0;
-    left: 0; */
     width: 100%;
     height: 100%;
     overflow: auto;
-    /* background-size: cover; */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* z-index: -6; */
-    /* margin: 0; */
-    /* padding: 100em; */
 }
 
 #homepage, #menupage {
@@ -726,8 +715,6 @@ footer .style1-heading {
     h2 { 
         font-size: 3.5em; 
         text-align: right; 
-        /* margin-right: 1em;  */
-        /* margin-left: -0.5em; */
     }
 }
 
@@ -765,6 +752,7 @@ footer .style1-heading {
 
 
 /* TABLET / Intermediate width screens */
+/* @media only screen and (min-width: 451px) and (max-width: 949px) { */
 @media only screen and (max-width: 949px) {
     body{ font-size: 0.8em; }
 
@@ -815,8 +803,9 @@ footer .style1-heading {
         scale: 0.8; 
         justify-self: right; 
         padding-right: 10em; 
+        margin-top: 5em;
     }
-    .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 2em; }
+    /* .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 2em; } */
     .nav-phone-controller { display: block; }
 
     .main-content-group { 
@@ -832,7 +821,10 @@ footer .style1-heading {
     }
     .info-details { grid-template-rows: repeat(3, 1em 1.5em); }
 
-    h1 { font-size: 8em; }
+    h1 { 
+        font-size: 8em; 
+        margin-right: 0; 
+    }
     h2 { 
         font-size: 3em; 
         text-align: left; 
@@ -848,7 +840,7 @@ footer .style1-heading {
 
 /* SMARTPHINE / Narrow screens */
 @media only screen and (max-width: 450px) {
-    body{ font-size: 0.7em; }
+    body{ font-size: 0.7em; width:}
 
     /* PAGE LAYOUT */
     /* Sets the following layout:
@@ -899,7 +891,8 @@ footer .style1-heading {
         grid-row: 1 / span 2; 
         scale: 0.8; 
         justify-self: right; 
-        padding-right: 5em; 
+        /* padding-right: 5em;  */
+        margin-top: 0;
     }
     .badge-controller { display: none; }
     /* nav { display: none; } */
@@ -912,7 +905,7 @@ footer .style1-heading {
     }
     .nav-phone-controller { display: block; }
     .nav-phone { 
-        display: none; 
+        display: block; 
         grid-column: 2; 
         grid-row: 1 / span 2; 
         justify-self: right; 
@@ -937,6 +930,10 @@ footer .style1-heading {
         margin-right: 0; 
     }
     h2 { display: none; }
+    /* h3 { 
+        margin-right: 2em; 
+        margin-left: 2em; 
+    } */
 }
 
 @media only screen and (min-width: 2000px) { 
