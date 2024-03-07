@@ -1,8 +1,8 @@
 # CafeOasen
 
-'''
+```
 Welcome to the repository of my fictive café website!
-'''
+```
 
 [View the café website in its current form.](https://elmwall.github.io/CafeOasen/), currently in Swedish only. The homepage and menu page have baisc functionality, while the rest are still under construction.
 
