@@ -1,12 +1,10 @@
 # CafeOasen
 
 '''
-
 Welcome to the repository of my fictive café website!
-
 '''
 
-[View the café website in its current form.](https://elmwall.github.io/CafeOasen/)
+[View the café website in its current form.](https://elmwall.github.io/CafeOasen/), currently in Swedish only. The homepage and menu page have baisc functionality, while the rest are still under construction.
 
 ## Purpose
 
@@ -16,6 +14,4 @@ The purpose of this project is to demonstrate my skill in HTML and CSS, as well 
 
 The initial goal is to apply my current knowledge with HTML and CSS to create the basic appearance and functionality of the page to create a responsive design that works on various screen sizes. Later I will apply further functionality with Javascript.
 
-## Concept
 
-The café and all facts and information is fictional following a theme. 
