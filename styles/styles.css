@@ -634,7 +634,8 @@ footer .style1-heading {
         width: 95%; 
         justify-self: left; 
         margin-top: 3em; 
-        margin-bottom: 1em; }
+        margin-bottom: 1em; 
+    }
     article { 
         grid-column: 4; 
         grid-row: 2 / span 3; 
@@ -667,6 +668,7 @@ footer .style1-heading {
         grid-column: 2; 
         grid-row: 1 / span 1; scale: 1.5; 
         justify-self: center; 
+        margin-top: 13em;
     }
     /* .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 5em; } */
     /* Hamburger menu is set to be hidden for desktop navigation */
@@ -700,12 +702,15 @@ footer .style1-heading {
 
     /* Aside */
     .aside-group { width: 24em; }
+    aside .info-details { margin: 2em; }
+    aside .info-details p {margin: 0;}
     
     /* Footer */
     /* An internal three-column grid is set for info-groups in the the footer. */
     .footer-content { display: grid; grid-template-columns: repeat(3, auto); }
     /* A grid is also used for setting information details nicely into two columns. */
     .info-details { display: grid; grid-template-columns: auto auto; }
+    
     
     /* Adaptations for specifik styles */
     h1 { 
@@ -752,8 +757,8 @@ footer .style1-heading {
 
 
 /* TABLET / Intermediate width screens */
-/* @media only screen and (min-width: 451px) and (max-width: 949px) { */
-@media only screen and (max-width: 949px) {
+@media only screen and (min-width: 451px) and (max-width: 949px) {
+/* @media only screen and (max-width: 949px) { */
     body{ font-size: 0.8em; }
 
     /* PAGE LAYOUT */
@@ -810,17 +815,19 @@ footer .style1-heading {
 
     .main-content-group { 
         margin-right: 0; 
-        margin-left: -2em; 
+        margin-left: -2em;
     }
-
-    .aside-group { width: 19em; }
 
     .footer-content { 
         display: grid; 
         grid-template-columns: repeat(3, auto); 
     }
     .info-details { grid-template-rows: repeat(3, 1em 1.5em); }
-
+    
+    .aside-group { width: 19em; }
+    aside .info-details { grid-template-rows: repeat(3, auto 2em); margin: 2em; }
+    aside .info-details p {margin: 0;}
+    
     h1 { 
         font-size: 8em; 
         margin-right: 0; 
@@ -840,7 +847,7 @@ footer .style1-heading {
 
 /* SMARTPHINE / Narrow screens */
 @media only screen and (max-width: 450px) {
-    body{ font-size: 0.7em; width:}
+    body{ font-size: 0.7em; }
 
     /* PAGE LAYOUT */
     /* Sets the following layout:
@@ -855,7 +862,7 @@ footer .style1-heading {
     */
     .grid-container { 
         grid-template-columns: auto; 
-        grid-template-rows: auto repeat(2, 1fr) 24em; 
+        grid-template-rows: repeat(3, auto) 24em; 
     }
 
     header { 
@@ -866,9 +873,10 @@ footer .style1-heading {
     .main-content { 
         grid-column: 1; 
         grid-row: 2; 
-        padding-left: 2em; 
+        /* padding-left: 2em;  */
         margin: 0.5em; 
-        margin-top: 1em; 
+        /* margin-top: 1em;  */
+        /* margin: 0; */
     }
     aside { 
         grid-column: 1; 
@@ -880,39 +888,54 @@ footer .style1-heading {
     
     .header-container { 
         display: grid; 
-        grid-template-columns: 1fr auto auto; 
-        grid-template-rows: 6em 3em; 
+        grid-template-columns: auto auto; 
+        grid-template-rows: 8em; 
         height: auto; 
+        width: auto;
     }
+
+    /* .header a {  grid-column: 1;  } */
     /* .header-container h1 { grid-column: 1; grid-row: 2 } */
     .badge-holder { 
         display: block; 
         grid-column: 2; 
-        grid-row: 1 / span 2; 
+        /* grid-row: 1 / span 2;  */
         scale: 0.8; 
-        justify-self: right; 
+        justify-self: center; 
         /* padding-right: 5em;  */
         margin-top: 0;
     }
     .badge-controller { display: none; }
     /* nav { display: none; } */
     nav { 
-        display: block; 
-        grid-column: 1; 
+        display: none; 
+        /* grid-column: 1; 
         grid-row: 2; 
         margin-top: 0.5em; 
-        margin-left: 0.7em; 
+        margin-left: 0.7em;  */
     }
     .nav-phone-controller { display: block; }
     .nav-phone { 
         display: block; 
-        grid-column: 2; 
-        grid-row: 1 / span 2; 
-        justify-self: right; 
-        margin-right: 1em; 
+        /* grid-column: 2; 
+        grid-row: 1 / span 2;  */
+        text-align: center; 
+        /* vertical-align: bottom; */
+        /* margin-right: 1em;  */
     }
-    
+    .nav-phone a {
+        position: absolute;
+        transform: translate(-50%, 15%);
+        transition: all 0s ease 0s;
+        /* top: 5em; */
+        /* margin-top: 0.3em; */
+    }
+
+    .main-content, .aside-group {margin-left: 0.4em; margin-right: 0.8em; }
     .aside-group { width: auto; }
+    aside .info-details { grid-template-rows: repeat(3, auto); margin: 2em; }
+    aside .info-details p {margin: 0;}
+
     .footer-content {
         display: grid; 
         grid-template-columns: 1fr; 
@@ -925,9 +948,10 @@ footer .style1-heading {
     }
     
     h1 { 
-        font-size: 7em; 
-        margin-top: 0.3em; 
-        margin-right: 0; 
+        font-size: 6em; 
+        margin-top: 0.2em; 
+        margin-right: -1em; 
+        width: auto;
     }
     h2 { display: none; }
     /* h3 { 
@@ -943,3 +967,6 @@ footer .style1-heading {
 @media only screen and (min-width: 2500px) { 
     body { font-size: 1.4em;}
 }
+
+
+.main-set {margin: 0; padding: 0;}
