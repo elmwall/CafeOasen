@@ -817,6 +817,19 @@ footer .style1-heading {
         margin-right: 0; 
         margin-left: -2em;
     }
+    /* #menupage .main-content-group { max-width: 100%; } */
+    .menu-container { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, auto); 
+        margin-left: 20%; max-width: 80em;
+    }
+    /* .menu-details {text-align: center;} */
+    /* #menupage .main-content-head { 
+        grid-column: 1 / span 3; 
+        grid-row: 1; 
+    } */
+    .menu-container .content-group h3 {text-align: left;}
 
     .footer-content { 
         display: grid; 
@@ -841,6 +854,7 @@ footer .style1-heading {
         margin-right: 2em; 
         margin-left: 2em; 
     }
+    #menupage h3 {white-space: nowrap;}
 }
 
 
