@@ -345,7 +345,8 @@ Info: contact information
 /* Placeras i en box */
 .main-content-group {
     background-color: #D6AD89;
-    min-width: 0em;    /* Minimum limit when display is narrow */
+    /* min-width: 0em;     */
+    /* Minimum limit when display is narrow */
     border-radius: 0.8em;   /* Rounded corners */
     box-shadow: 0.25em 0.5em 0.35em #00000038;  /* Shadow under box */
 }
@@ -441,7 +442,7 @@ article {
 
 .article-group {
     background-color: #9ad4c8;
-    width: 19em;
+    /* width: 19em; */
     padding: 1em;
     padding-bottom: 0.1em;  /* Create extra space to edges within box */
     padding-top: 1em;
@@ -644,6 +645,7 @@ footer .style1-heading {
     article { 
         grid-column: 4; 
         grid-row: 2 / span 3; 
+        width: 22em;
     }
     #menupage article { display: none; }
     footer { 
@@ -653,6 +655,7 @@ footer .style1-heading {
     }
     
     /* Settings for grid internal elements */
+
     /* Header */
     /* Set a nested grid for the header with lauout:
     
@@ -681,9 +684,9 @@ footer .style1-heading {
     
     /* Main */
     .main-content-group { margin-right: -9em; 
-        margin-left: -2em; 
+        margin-left: -1em; 
         max-width: 60em; 
-        min-width: 38em;
+        /* min-width: 38em; */
     }
     /* For menu display, an internal grid is defined. */
     /* Only the position for the heading is defined, I let the menu items be sorted automatically. */
@@ -710,7 +713,7 @@ footer .style1-heading {
     /* #menupage .content-group { min-width: 17em; } */
 
     /* Aside */
-    .aside-group { width: 24em; }
+    .aside-group { width: 26em; }
     aside .info-details { margin: 2em; }
     aside .info-details p {margin: 0;}
     
@@ -782,7 +785,7 @@ footer .style1-heading {
     Rows 3 has defined widths, while the other adjusts to the content.
     */
     .grid-container { 
-        grid-template-columns: repeat(2, 1fr) auto; 
+        grid-template-columns: repeat(3, auto); 
         grid-template-rows: auto auto 5em; 
     }
 
@@ -797,12 +800,17 @@ footer .style1-heading {
     }
     .main-content { 
         grid-column: 1 /span 2; 
-        min-width: 0em; 
+        /* min-width: 0em;  */
         padding-left: 1.5em; 
         margin: 1em; 
         margin-top: 3em;
     }
-    article { display: none; }
+    article { 
+        /* display: flex; */
+        margin-right: -14em;
+        margin-top: -3em;
+        /* width: 100%; */
+    }
     footer { grid-column: 1 /span 3; }
     
     .header-container { 
@@ -817,16 +825,16 @@ footer .style1-heading {
         grid-row: 1 / span 2; 
         scale: 0.8; 
         justify-self: right; 
-        padding-right: 10em; 
-        margin-top: 5em;
+        padding-right: 11em; 
+        margin-top: 3em;
     }
     /* .badge-box, .badge-circle, .badge-graphics, .badge-graphics img, .badge-front, .badge-front img { top: 2em; } */
-    .nav-phone-controller { display: block; }
+    .nav-phone-controller { display: none; }
 
     .main-content-group { 
         margin-right: 0; 
         margin-left: -2em;
-        min-width: 42em;
+        min-width: 32em;
     }
     /* #menupage .main-content-group { max-width: 100%; } */
     .menu-container { 
@@ -855,6 +863,15 @@ footer .style1-heading {
     aside .info-details { grid-template-rows: repeat(3, auto 2em); margin: 2em; }
     aside .info-details p {margin: 0;}
     
+    .social-media-container { display: none; }
+    /* article .grid-item { margin: -2em; } */
+    article .style1-paragraph {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        /* grid-template-row: repeat(3, 1fr); */
+        gap: 0.2em;
+    }
+    
     h1 { 
         font-size: 8em; 
         margin-right: 0; 
@@ -871,6 +888,12 @@ footer .style1-heading {
     /* #menupage h3 {margin-left: 0; white-space: nowrap;} */
 }
 
+
+---TABLET-NARROW {}
+/* TABLET / Narrow screens */
+@media only screen and (min-width: 451px) and (max-width: 700px) {
+    body { font-size: 0.6em;}
+}
 
 
 /* SMARTPHINE / Narrow screens */
