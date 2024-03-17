@@ -222,6 +222,7 @@ a:active {
     background: rgba(175,109,81,1);
     border-radius: 50%; /* Creates a circular shape */
   }
+a .badge-circle { background: #00000000; }
 
 .badge-graphics {
     /* z-index: 1; */
