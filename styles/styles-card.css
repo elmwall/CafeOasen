@@ -4,8 +4,8 @@
 }
 
 body {
-    background-color: black;
-    color: red;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
     text-align: center;
     /* display: grid; */
     height: 100vh;
@@ -24,9 +24,11 @@ body {
     display: grid;
     height: 100%;
     width: 100%;
-    place-items: center;
-    grid-template-columns: auto 25% 1em 25% auto;
-    grid-template-rows: auto 25% 1em 25% auto;
+    /* place-items: center; */
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 0.5em;
+    /* padding: 5em; */
 }
 
 /* .test1 {
@@ -58,51 +60,106 @@ body {
     background: rgb(103, 21, 211);
 } */
 
+.grid-item {
+    background-color: #3d023d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100%; */
+    /* place-items: center; */
+    /* justify-items: center; */
+}
+
 .top-left {
+    /* background-color: purple; */
     grid-column: 1;
     grid-row: 1;
 }
 
 .top-right {
-    grid-column: 5;
+    /* background-color: #570041; */
+    grid-column: 2;
     grid-row: 1;
 }
 
 .center {
-    grid-column: 2 / span 3;
-    grid-row: 2 / span 3;
+    /* background-color: #0c3329; */
+    /* grid-column: 2 / span 3;
+    grid-row: 2 / span 3; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    min-width: 15em;
+    min-height: 18em;
+    max-width: 30em;
+    max-height: 36em;
+    /* padding: 10em; */
 }
 
 .bottom-left {
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 2;
 }
 
 .bottom-right {
-    grid-column: 5;
-    grid-row: 5;
+    grid-column: 2;
+    grid-row: 2;
 }
 
+.profile-holder {
+    background-color: #0c3329;
+    display: grid;
+    /* justify-self: center; */
+    width: 100%;
+    height: 100%;
+    /* max-width: 30em; */
+    /* aspect-ratio: 30 / 9; */
+    /* max-height: 40em; */
+    position: absolute; /* Absolut position innehållet inuti containern */
+    border-radius: 2em;
+    box-shadow: inset 0 0 2em 0.2em #c3dfe2;
+    /* transform: translate(0, -50%); */
+}
+.profile-holder h2 {
+    padding: 1em;
+}
 
 .profile-pic {
-    width: 100%;
-    max-width: 30em;
+    /* width: 100%; */
+    /* max-width: 30em; */
     /* overflow: hidden; */
+    /* padding: 4em; */
 }
 
 .profile-pic img {
-    width: 100%;
+    max-width: 60%;
     /* width: 10em; */
     border-radius: 50%;
+    
 }
 
 ul {
-    font-size: 2em;
+    font-size: 1.2em;
     list-style: none;
-    display: flex;
     justify-content: center;
+    /* padding: 1em; */
 }
+
+.categories {
+    display: grid;
+    /* width: 20em; */
+    grid-template-columns: auto auto;
+}
+.pages {display: flex;}
 
 li {
     margin: 0.2em;
+}
+
+i {
+    font-size: 1.2em;
+    color: white;
 }
