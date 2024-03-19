@@ -29,7 +29,7 @@ body {
     overflow: auto;
 }
 
-#homepage, #menupage {
+#homepage, #menupage, #infopage {
     overflow: visible;  /* The reintroduces scroll function for imported pages through iframe */
 }
 
@@ -67,6 +67,7 @@ h5 {
     font-size: 1.5em;
     margin-bottom: 1.5em;
 }
+/* header h2 { margin-right: 2em; } */
 
 
 
@@ -352,6 +353,13 @@ Info: contact information
     box-shadow: 0.25em 0.5em 0.35em #00000038;  /* Shadow under box */
 }
 
+.main-content-group h2 {
+    font-size: 6em;
+    text-align: right;
+    min-width: auto;
+    margin-right: 0.2em;
+}
+
 /* Box header with darker shade */
 .main-content-head {
     background: #C3834B;
@@ -532,53 +540,46 @@ footer .style1-heading {
 /* MENU PAGE */
 
 #menupage .main-content-group {
-    background-color: #f070278e;
+    background-color: #daaa81;
     padding: 1em;
-    /* margin-right: 1em; */
-    /* min-width: 40em; */
-}
-
-#menupage .main-content-head {
-    background-color: transparent;
-    font-size: 2em;
-    margin-right: 0;
-    margin-bottom: 2em;
-    max-width: 1em;
 }
 
 #menupage .content-group {
-    background-color: #dfaa79;
+    background-color: #ca9077;
     font-size: 1em;
-    padding: 1.5em;
-    margin: 0.3em;
+    padding: 0em;
+    margin: 0.6em;
     border-radius: 0.8em;
-    /* text-align: center; */
+}
+
+#menupage .main-content-head {
+    background-color: #6A0E24;
+    font-size: 1em;
+    padding: 0;
 }
 
 #menupage .content-group:hover {
-    background-color: #f0b98a;
+    background-color: #e5bead;
 }
 
 #menupage .menu-container {
     justify-content: right;
 }
 
-.main-content-group h2 {
-    font-size: 6em;
-    text-align: right;
-    min-width: auto;
-    margin-right: 0.2em;
-}
-
 .menu-container h3 {
+    color: white;
+    font-weight: 500;
     margin-bottom: 0.3em;
     margin-left: 0; 
     margin-right: 0; 
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
 }
 
 .menu-details {
     display: grid;
-    /* grid-template-columns: auto auto; */
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 .right-p {
@@ -589,6 +590,8 @@ footer .style1-heading {
 }
 
 .menu-details p {margin-top: 0.3em;}
+
+/* INFO PAGE */
 
 
 
@@ -631,7 +634,7 @@ footer .style1-heading {
     .main-content { 
         grid-column: 2 / span 2; 
         grid-row: 2 / span 3; 
-        min-width: 23em; 
+        min-width: 28em; 
         justify-self: center; 
         margin-top: 13em;
     }
@@ -688,7 +691,7 @@ footer .style1-heading {
     .main-content-group { margin-right: -9em; 
         margin-left: -1em; 
         max-width: 60em; 
-        /* min-width: 38em; */
+        min-width: 38em;
     }
     /* For menu display, an internal grid is defined. */
     /* Only the position for the heading is defined, I let the menu items be sorted automatically. */
@@ -705,13 +708,13 @@ footer .style1-heading {
         display: grid; 
         grid-template-columns: repeat(3, 1fr); 
         grid-template-rows: repeat(2, auto); 
-        /* margin-left: 20%;  */
-        max-width: 80em;
     }
     .main-content-head { 
         grid-column: 1 / span 3; 
         grid-row: 1; 
     }
+    #infopage .info-details { margin: 0; }
+    #infopage .info-details p {margin: 0;}
     /* #menupage .content-group { min-width: 17em; } */
 
     /* Aside */
@@ -743,7 +746,7 @@ footer .style1-heading {
 @media only screen and (min-width: 950px) and (max-width: 1500px) {
     #menupage header { 
         grid-column: 1 / span 4; 
-        min-width: 120vw; 
+        /* min-width: 120vw;  */
     }
 
     /* Change the menu layout:
@@ -766,7 +769,8 @@ footer .style1-heading {
         grid-column: 1 / span 2; 
         grid-row: 1; 
     } */
-    #menupage .main-content-group { max-width: 80%; }
+    header h2 {font-size: 3em;}
+    /* #menupage .main-content-group { max-width: 80%; } */
 }
 
 ---TABLET{}
@@ -916,7 +920,7 @@ footer .style1-heading {
     body { font-size: 0.6em;}
 }
 
-
+---SMARTPHONE {}
 /* SMARTPHINE / Narrow screens */
 @media only screen and (max-width: 450px) {
     body{ font-size: 0.7em; }
@@ -1048,6 +1052,19 @@ footer .style1-heading {
         transform: translate(-50%, 19%);
         transition: all 0s ease 0s;
     } */
+
+
+    /* .menu-container { 
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 5em repeat(6, auto); 
+        max-width: 80em;
+    } */
+    
+    .main-content-group h2 {
+        display: flex;
+        justify-content: right;
+    }
 
     .main-content, .aside-group { margin-left: 0.4em; margin-right: 0.8em; }
     .aside-group { width: auto; }
