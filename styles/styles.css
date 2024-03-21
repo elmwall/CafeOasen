@@ -792,7 +792,7 @@ footer .style1-heading {
     */
     .grid-container { 
         grid-template-columns: repeat(3, auto); 
-        grid-template-rows: auto auto 5em; 
+        grid-template-rows: auto auto auto 5em; 
     }
 
     header { 
@@ -813,15 +813,23 @@ footer .style1-heading {
     }
     article { 
         grid-column: 1 / span 2; 
-        /* display: flex; */
+        grid-row: 3;
+        /* display: inline-block; */
         /* margin-right: -14em; */
         margin: 1em;
         /* margin-right: 1.5em; */
         /* margin-left: 1em; */
+        /* margon-bottom: 19em; */
         margin-top: -2em;
         width: 95%;
     }
-    footer { grid-column: 1 /span 3; }
+    footer { 
+        grid-column: 1 / span 3; 
+        grid-row: 5;
+        /* margin-top: -3em; */
+        padding-bottom: 2em; 
+        /* padding-bottom: 2em; */
+    }
     
     .header-container { 
         display: grid; 
@@ -885,7 +893,7 @@ footer .style1-heading {
     }
     article .style1-paragraph {
         display: grid;
-        grid-template-columns: repeat(2, 10em);
+        grid-template-columns: repeat(2, auto);
         /* grid-template-rows: repeat(3, auto); */
         /* grid-template-row: repeat(3, 1fr); */
         /* gap: 0.2em; */
@@ -938,7 +946,7 @@ footer .style1-heading {
     */
     .grid-container { 
         grid-template-columns: auto; 
-        grid-template-rows: repeat(3, auto) 24em; 
+        grid-template-rows: repeat(3, auto) 30em; 
     }
 
     header { 
@@ -1075,7 +1083,7 @@ footer .style1-heading {
         display: grid; 
         grid-template-columns: 1fr; 
         grid-template-rows: repeat(3, 7em); 
-        scale: 1
+        scale: 1;
     }
     .info-details { 
         grid-template-columns: auto auto; 
